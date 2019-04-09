@@ -2,6 +2,8 @@ package _02_gotta_catchem_all;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import javax.swing.JOptionPane;
+
 import org.junit.jupiter.api.Test;
 
 
@@ -32,17 +34,31 @@ class ExceptionsTest {
 	//3. Complete the JUnit test method to test the divide method.
 	@Test
 	public void testDivideByZeroException() {
-		
+		try {
+			String a = JOptionPane.showInputDialog("what number por favor");
+			String b = JOptionPane.showInputDialog("what number por favor");
+			double a1 = Double.parseDouble(a);
+			double b1 = Double.parseDouble(b);
+			System.out.println(em.divide(a1, b1));
+			JOptionPane.showMessageDialog(null, em.divide(a1, b1));
+		}catch(IllegalArgumentException e) {
+			e.printStackTrace();
+		}
 	}
 	
 	//4. In the ExceptionMethods class, write a method called reverseString that takes a
 	//   String and returns the reverse of that String. It should throw an IllegalStateException
 	//   if the String passed in is empty
-	
 	//5. Complete the JUnit test method to test the reverseStringMethod.
 	@Test
 	public void testReverseString() {
-		
+		try {
+			String a = JOptionPane.showInputDialog("What string would you like reversed?");
+			System.out.println(em.reverseString(a));
+			JOptionPane.showMessageDialog(null, em.reverseString(a));
+		}catch(IllegalStateException e) {
+			e.printStackTrace();
+		}
 	}
 	
 	
